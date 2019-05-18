@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" 
+						xmlns:s="library://ns.adobe.com/flex/spark"
+						xmlns:fx="http://ns.adobe.com/mxml/2009" 
+						layout="absolute" width="364" height="452"  x="-3" y="7"
+						applicationComplete="init()">
+<mx:Script source="Demineur.as"/>
+<mx:DateFormatter id="dateFormatter" formatString="NN:SS" />
+	<mx:MenuBar  id="mMenuBar" labelField="@label" width="253" click="menuBarClickHandler(event)" itemClick="menuBarItemClickHandler(event)" height="32">
+	<mx:XMLList>
+		<menuitem label="Jeu">
+			<menuitem label="Nouveau" />
+			<menuitem label="Meilleurs scores"/>
+			<menuitem label="Quitter"/>
+		</menuitem>
+		<menuitem label="Help"/>		
+	</mx:XMLList>
+	</mx:MenuBar>
+	<mx:Script>
+		<![CDATA[
+		[Embed(source="images/mine.jpg")]
+		[Bindable]
+		var mineIcon:Class; 
+		[Embed(source="images/start2.jpg")]
+		[Bindable]
+		var startIcon:Class; 
+		[Embed(source="images/stop.jpg")]
+		[Bindable]
+		var stopIcon:Class;
+		[Embed(source="images/minefield.png")]
+		[Bindable]
+		var minefield:Class;
+		]]>
+	</mx:Script>
+	<mx:Label id="counter" x="306" y="0" text="00:00" width="57" height="22" textAlign="center" fontSize="16" color="#ED430F" fontStyle="normal" fontFamily="Arial"/>
+	<mx:Button x="252" y="0" id="play" height="32" />
+</mx:WindowedApplication>
